@@ -1,6 +1,28 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const movies = ref([])
+const getSpaceMovies = async ()  => {
+  const response = await fetch('/movies')
+
+  if (response.ok) {
+    const data = await response.json()
+    movies.value = data.movies
+  } else {
+    throw response.status
+  }
+}
+
+getSpaceMovies()
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <ul>
+      <li v-for="{ title, id } in movies" :key="id">
+        {{ title }}
+      </li>
+    </ul>
   </div>
 </template>
 
