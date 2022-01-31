@@ -5,6 +5,10 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+
+console.log('meta: ', import.meta)
+console.log('Dev: ', import.meta.env.DEV)
+console.log('Prod: ', import.meta.env.PROD)
 </script>
 
 <template>
